@@ -1,0 +1,16 @@
+{
+  "files": [
+    "index.tsx"
+  ],
+  "compilerOptions": {
+    "target": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "reactNamespace": "window",
+    "strict": true,
+    "lib": [
+      "esnext",
+      "dom"
+    ]
+  }
+}
