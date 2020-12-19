@@ -1,10 +1,5 @@
-import { createApp, Fragment, h } from "@vue/runtime-dom";
-import CustomComponent from "./custom-component";
-
-// @ts-ignore
-window["h"] = h;
-// @ts-ignore
-window["Fragment"] = Fragment;
+import { createApp } from "vue";
+import Bar from "./bar";
 
 interface FooProps {
   text: string;
@@ -20,7 +15,7 @@ createApp({
     return (
       <>
         <Foo text="functional component" onPressed={(value) => console.log(value)} />
-        <CustomComponent title="define component" onClick={(value) => console.log(value)} />
+        <Bar title="defined component" onClick={(value) => console.log(value)} />
       </>
     );
   },

@@ -1,4 +1,4 @@
-import { defineComponent, PropType, ref } from "@vue/runtime-dom";
+import { defineComponent, PropType, ref } from "vue";
 
 export default defineComponent({
   props: {

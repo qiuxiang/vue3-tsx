@@ -1,13 +1,16 @@
 {
   "private": true,
   "scripts": {
-    "build": "esbuild index.tsx --bundle --outdir=. '--define:process.env.NODE_ENV=\"production\"' --jsx-factory=h --jsx-fragment=Fragment"
+    "build": "esbuild index.tsx --bundle --outdir=. --jsx-factory=Vue.h --jsx-fragment=Vue.Fragment"
   },
   "dependencies": {
-    "@vue/runtime-dom": "^3.0.2"
+    "vue": "^3.0.4"
   },
   "devDependencies": {
     "esbuild": "^0.8.7"
+  },
+  "browser": {
+    "vue": "./vue.js"
   },
   "prettier": {
     "printWidth": 100
