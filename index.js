@@ -48,7 +48,7 @@
   var vue = __toModule(require_vue());
   var bar_default = vue.defineComponent({
     props: {
-      title: {type: String},
+      title: {type: String, require: true},
       onClick: {type: Function}
     },
     setup(props) {
