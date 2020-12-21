@@ -2,8 +2,8 @@ import { defineComponent, PropType, ref } from "vue";
 
 export default defineComponent({
   props: {
-    title: { type: String },
-    onClick: { type: Function as PropType<(value: number) => unknown> },
+    title: { type: String, require: true },
+    onClick: { type: Function as PropType<(value: number) => void> },
   },
   setup(props) {
     const text = ref<string>("");
