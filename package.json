@@ -1,16 +1,18 @@
 {
   "private": true,
   "scripts": {
-    "build": "esbuild index.tsx --bundle --outdir=. --jsx-factory=Vue.h --jsx-fragment=Vue.Fragment"
+    "build": "esbuild index.tsx --bundle --outdir=. --jsx-factory=Vue.h --jsx-fragment=Vue.Fragment --sourcemap"
   },
   "dependencies": {
+    "ant-design-vue": "^2.0.0-rc.5",
     "vue": "^3.0.4"
   },
   "devDependencies": {
     "esbuild": "^0.8.7"
   },
   "browser": {
-    "vue": "./vue.js"
+    "vue": "./lib/vue.js",
+    "ant-design-vue": "./lib/antd.js"
   },
   "prettier": {
     "printWidth": 100

@@ -28,14 +28,21 @@
     return __exportStar(__defProp(module != null ? __create(__getProtoOf(module)) : {}, "default", {value: module, enumerable: true}), module);
   };
 
-  // vue.js
+  // lib/vue.js
   var require_vue = __commonJS((exports, module) => {
     module.exports = Vue;
     return Vue;
   });
 
+  // lib/antd.js
+  var require_antd = __commonJS((exports, module) => {
+    module.exports = antd;
+    return antd;
+  });
+
   // index.tsx
   var vue2 = __toModule(require_vue());
+  var ant_design_vue = __toModule(require_antd());
 
   // bar.tsx
   var vue = __toModule(require_vue());
@@ -65,9 +72,15 @@
   var Foo = ({text, onPressed}) => /* @__PURE__ */ Vue.h("p", {
     onClick: () => onPressed(Math.random())
   }, text);
-  vue2.createApp({
+  var app = vue2.createApp({
     render() {
-      return /* @__PURE__ */ Vue.h(Vue.Fragment, null, /* @__PURE__ */ Vue.h(Foo, {
+      return /* @__PURE__ */ Vue.h(ant_design_vue.Space, {
+        style: {padding: "16px"},
+        direction: "vertical"
+      }, /* @__PURE__ */ Vue.h(ant_design_vue.Alert, {
+        message: "antd alert",
+        showIcon: true
+      }), /* @__PURE__ */ Vue.h(Foo, {
         text: "functional component",
         onPressed: (value) => console.log(value)
       }), /* @__PURE__ */ Vue.h(bar_default, {
@@ -75,5 +88,7 @@
         onClick: (value) => console.log(value)
       }));
     }
-  }).mount("main");
+  });
+  app.mount("main");
 })();
+//# sourceMappingURL=index.js.map
